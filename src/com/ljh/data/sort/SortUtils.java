@@ -39,7 +39,7 @@ public class SortUtils {
 
     /**
      * 归并排序
-     * 将数组分成2组，调用递归排列2个子数组
+     * 将数组分成2组，调用递归排列2个子数组,并将排序好的结果放到临时数组。拍好后拷贝到原数组
      */
     public static int[] mergeSort(int[] arr) {
         if (arr == null || arr.length == 0) {
@@ -59,26 +59,25 @@ public class SortUtils {
             internalMergeSort(mid + 1, end, arr, mergeData);
             int i = start;
             int j = mid + 1;
-            int position = start;
+            int position = 0;
             while (i <= mid && j <= end) {
-                if (i > mid) {
-                    mergeData[position] = arr[j];
-                    j++;
-                } else if (j > end) {
-                    mergeData[position] = arr[i];
-                    i++;
-                } else {
-                    if (arr[i] > arr[j]) {
-                        mergeData[position] = arr[j];
-                        j++;
-                    } else {
-                        mergeData[position] = arr[i];
-                        i++;
-                    }
-                }
-                System.out.println(Arrays.toString(mergeData));
-                position++;
+                mergeData[position ++] = arr[i] < arr[j]? arr[i++] : arr[j++];
             }
+            while (i <= mid)
+            {
+                mergeData[position ++] = arr[i++];
+            }
+            while (j <= end)
+            {
+                mergeData[position ++] = arr[j++];
+            }
+
+            position = 0;
+            //将temp中的元素全部拷贝到原数组中
+            while(start <= end){
+                arr[start++] = mergeData[position++];
+            }
+
         }
     }
 }
