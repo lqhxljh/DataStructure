@@ -24,19 +24,14 @@ public class Main {
         node.setRight(childNodeRight);
 
         TreeNode childNodeLeft1 = new TreeNode();
-        childNodeLeft1.setValue(1);
+        childNodeLeft1.setValue(3);
         TreeNode childNodeRight1 = new TreeNode();
-        childNodeRight1.setValue(2);
+        childNodeRight1.setValue(4);
         childNodeLeft.setLeft(childNodeLeft1);
         childNodeLeft.setRight(childNodeRight1);
 
 
-        TreeNode childNodeLeft12 = new TreeNode();
-        childNodeLeft12.setValue(1);
-        TreeNode childNodeRight12 = new TreeNode();
-        childNodeRight12.setValue(2);
-        childNodeRight.setLeft(childNodeLeft12);
-        childNodeRight.setRight(childNodeRight12);
+
         /**
          * 先序排列
          */
@@ -50,5 +45,20 @@ public class Main {
          */
         TreeNodeUtils.lastTraverse(node);
 
+        /**
+         * 获取最大值
+         */
+        int result = TreeNodeUtils.getMaxValue(node);
+        System.out.println("二叉树最大值" + result);
+        /**
+         * 获取最大深度
+         */
+        result = TreeNodeUtils.getMinValueDepth(node);
+        System.out.println("二叉树最小深度" + result);
+        /**
+         * 判断是否为平衡二叉树
+         */
+        boolean isBalanceTree = TreeNodeUtils.isBalanceTree(node);
+        System.out.println("二叉树最小深度" + isBalanceTree);
     }
 }
