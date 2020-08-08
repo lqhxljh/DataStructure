@@ -36,6 +36,7 @@ public class Main {
          * 先序排列
          */
         TreeNodeUtils.preTraverse(node);
+        TreeNodeUtils.preTraverse(node);
         /**
          * 中序排列
          */

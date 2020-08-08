@@ -38,5 +38,17 @@ public class ListNodeTest {
             content2.append(nodeDelete.value + ",");
             nodeDelete = nodeDelete.next;
         }
+
+        ListNode nodeReverseResult = ListUtils.reverse(listNode);
+        StringBuilder content3 = new StringBuilder("nodeReverse");
+        ListNode nodeReverse= nodeReverseResult;
+        while (nodeReverse != null) {
+            content3.append(nodeReverse.value + ",");
+            nodeReverse = nodeReverse.next;
+        }
+        System.out.println(content3);
+        ListNode midNode = ListUtils.findMidNote(nodeReverseResult);
+        System.out.println("中间元素"+ midNode.value);
+
     }
 }
