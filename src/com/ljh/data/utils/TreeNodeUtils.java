@@ -1,4 +1,6 @@
-package com.ljh.data.structure;
+package com.ljh.data.utils;
+
+import com.ljh.data.bean.TreeNode;
 
 public class TreeNodeUtils {
     public static void preTraverse(TreeNode treeNode) {

@@ -1,9 +1,9 @@
 package sample;
 
 
-import com.ljh.data.sort.SortUtils;
-import com.ljh.data.structure.TreeNode;
-import com.ljh.data.structure.TreeNodeUtils;
+import com.ljh.data.utils.SortUtils;
+import com.ljh.data.bean.TreeNode;
+import com.ljh.data.utils.TreeNodeUtils;
 
 import java.util.Arrays;
 
@@ -60,5 +60,8 @@ public class Main {
          */
         boolean isBalanceTree = TreeNodeUtils.isBalanceTree(node);
         System.out.println("二叉树最小深度" + isBalanceTree);
+
+        ListNodeTest test  = new ListNodeTest();
+        test.test();
     }
 }

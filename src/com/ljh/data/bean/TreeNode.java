@@ -1,4 +1,4 @@
-package com.ljh.data.structure;
+package com.ljh.data.bean;
 
 public class TreeNode {
     /**
